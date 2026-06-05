@@ -8,10 +8,6 @@
 
 * **Last Updated:** June 4, 2026
 
-
-
-
-
 ## 1. Network Segmentation & Firewall Topology
 
 ### 1.1 VLAN Matrix
@@ -55,10 +51,6 @@
   
   - Allows PROD access to internet while blocking private networks.
 
-
-
-
-
 ## 2. Centralized Identity Governance & RBAC
 
 ### 2.1 Active Directory & Core Services Topology
@@ -71,7 +63,7 @@
 
 * **Logical Network Placement:** CORE Zone (VLAN 20)
 
-* **Static Address:** `10.10.20.10/24`
+* **Static Address:** `10.20.20.10/24`
 
 * **Default Gateway:** `10.20.20.1` (OPNsense Subinterface)
 
@@ -117,10 +109,6 @@
 * **Target Authorization:** Full Passwords/Sudo Root Privileges.
 
 * **Assigned Context:** samual
-
-
-
-
 
 ## 3. Computer Node Infrastructure (PROD-UBUNTU-01)
 
@@ -172,10 +160,6 @@ Root permissions mapped directly to Actice Directory groups using visudo.
 %Linux_Admins@lab.lan ALL=(ALL:ALL) ALL
 ```
 
-
-
-
-
 ## 4. Containerization & Storage Architecture
 
 ### 4.1 Storage Matrix
@@ -192,8 +176,6 @@ Root permissions mapped directly to Actice Directory groups using visudo.
     
     * `proxy-letsencrypt/`(SSL Certificate Cryptograpic Storage)
 
-
-
 ### 4.2 Application Authorization Delegation
 
 The `samual`user is given permission to manipulate Docker runtimes without invoking total root privileges.
@@ -201,10 +183,6 @@ The `samual`user is given permission to manipulate Docker runtimes without invok
 ```bash
 sudo gpasswd -a samual docker
 ```
-
-
-
-
 
 ## 5. Reverse Proxy & Application Orchestration
 
@@ -255,9 +233,3 @@ Applications are exposed via Authoritative Active Directory DNS Forward Lookup Z
 | -------------- | ---------------------- | ----------------------------------- | -------------- |
 | Portainer CE   | `portainer.lab.lan`    | `https://infra-portainer`           | `9443`         |
 | Proxy UI       | Direct IP              | `http://10.30.30.10`                | `81`           |
-
-
-
-
-
-
