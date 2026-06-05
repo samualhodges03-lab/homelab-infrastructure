@@ -1,0 +1,5 @@
+**/portainer-data/
+**/proxy-data/
+**/proxy-letsencrypt/
+**/*-data/
+.DS_Store
